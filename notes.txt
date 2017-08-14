@@ -1,0 +1,109 @@
+type() -> class
+*NoneType is falsy*
+
+#logic
+  == -> equality (content)
+  is -> identity (location in memory)
+  not || != -> inverting
+  and || or -> combiners
+
+#string methods
+  .isalpha() -> alphabetic?
+  .isdigit() -> is digit
+  .format() -> pass in vars
+    3.6 introduces interpolation via `f"this is a {var}"`
+
+
+
+
+#ternary
+  "bigger" if a > b else "smaller"
+
+#lists
+  list() or [] -> declare list
+  list[] -> square bracket notation for getting & setting
+  .append(x) -> insert at end of list (like .push() or <<)
+  x in list -> contains/includes
+  len(list) -> length
+  del list[i] -> delete el @ index
+  list[i:] -> get list starting at index
+  list[1:-1] -> get list excluding first & last els
+  .pop()
+  .reverse()
+
+#ranges
+  range(start, stop(excl), step)
+
+#loops
+  for x in list -> iterate over list
+  for x in range() -> iterate over range
+  while x -> iterate until x is false
+  break -> conditional exit
+  continue -> conditional skip
+
+#dictionaries
+  dict[key] -> val at key or KeyError; also setter for existing keys
+  dict.get(key, default_val) -> val at key or default
+  dict.keys() -> list of keys
+  dict.values() -> list of values
+  del dict[key] -> delete key/val pair
+
+#exceptions
+  try: ... except ErrorName: ... -> handle exception
+  except Exception -> generic handler
+  except Error as error:
+    print(error) -> leverage original error (+ traceback for lineno)
+
+#other types
+  complex
+  long (only in Python2, replaced by int in 3)
+  bytes
+  bytearray
+  tuple
+  set
+  frozenset
+
+#functions
+  def meth(arg1='first arg'): -> default arg
+  meth(arg1='hello', arg2='world') -> named args
+  def var_args(name, *args): -> *args allows variable n of args
+    args > *args when referencing inside fn
+  def kw_args(name, **kwargs): -> **kwargs allows dict of n key/val pairs of args
+    kwargs > *args when referencing inside fn
+
+  nested fns -> closures with access to parent's scope.
+
+#generator functions
+  (x*x for x in range(3)) -> like list, but values not stored in mem (() > [])
+  yield -> like return, but for generators
+  use cases include abstract lists (e.g. counters) & async calls
+
+#lambda functions
+  lambda x: x*x -> anon fns, can be assigned to vars
+
+#open/read/print to file
+  f.open(filename, accessmode) -> open file in given accessmode (append, write, read, etc.)
+  f.write() -> write to open file
+  f.close() -> close file
+  f.readlines() -> reads lines until EOF
+
+#classes
+  instance = ClassName() -> instantiation
+  def __special__: -> special methods (e.g. __init__ as constructor)
+    - hidden, but can be overridden
+  `pass` -> placeholder keyword; can be used in class or function
+  instance attributes can be set via __init__ or getters
+  class attributes are set as top level variables and can be accessed externally or internally using `self`
+  class ClassName(Parent): -> inheritance
+  supports multiple inheritance
+  override method by redeclaring in child class
+  use `super().method()` to reference parent method implementation
+
+#modules
+  file -> module
+  from `module` import `ClassName`
+  from `module` import `functionName`
+  from `module` import `*`
+
+#comments
+  docstrings are _inside_ function definitions
