@@ -1,0 +1,30 @@
+"duck typing" - An object's suitability for a context is only determined at runtime
+
+"scalar types" - Primitives
+  - int -> signed arbitrary precision integer
+    - 0b -> binary
+    - 0o -> octal
+    - 0x -> hexidecimal
+    - int(arg, base) -> rounding always toward 0
+
+  - float -> 64-bit floating point number
+    - IEEE-754 double precision
+    - 53 bits of binary precision
+    - 15 to 16 bits of decimal precision
+    - float(str|int|'nan'|['inf'|'-inf']])
+
+  - None -> the null object
+    - never printed
+    - validated with `is` operator
+
+  - bool -> boolean logic values
+
+repl's `help` fn retrieves any embedded docs for native and imported objects
+
+// -> integer division
+
+any calculation involving `int` & `float` is promoted to `float`
+
+flat is better than nested
+
+no do/while construct. instead, use while/if/break
